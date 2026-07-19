@@ -15,46 +15,54 @@
     a { color: #22d3ee; }
     .eyebrow { color: #22d3ee; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
     .updated { color: #7f8aa3; }
+    footer { margin-top: 48px; color: #7f8aa3; font-size: .9rem; }
   </style>
 </head>
 <body>
   <main>
     <div class="eyebrow">Overworld</div>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated July 14, 2026</p>
+    <p class="updated">Last updated July 18, 2026</p>
 
-    <p>Overworld is designed to keep your exploration data on your device. It has no account system, advertising, analytics, tracking SDK, developer-operated server, or built-in cloud synchronization.</p>
+    <p>Overworld stores its live exploration database on your device. The app does not require an account or include advertising or analytics SDKs. Optional exports and device backups can create copies outside the app, as described below.</p>
 
     <h2>Information Overworld stores</h2>
-    <p>Overworld stores revealed map cells as integer grid coordinates. It does not store raw GPS history, routes, timestamps, speed, contacts, photos, messages, or identifiers used to track you across apps or websites.</p>
+    <p>Overworld stores revealed map cells as integer grid coordinates and, when available, the time each cell was first revealed. These records support the explored map and map-history playback. The app also stores your settings.</p>
+
+    <p>Overworld does not retain raw GPS fixes, routes, speeds, or a continuous movement log. Cells created by older versions may not have a first-reveal time.</p>
 
     <h2>Location</h2>
-    <p>Overworld requests Always location access so it can reveal nearby map cells while the app is open, in the background, or while the screen is off. Location fixes are processed on your device and are not transmitted to the developer. You can pause tracking in Overworld or change location access in iOS Settings at any time.</p>
+    <p>Overworld requests Always location access so it can reveal nearby map cells while the app is open, in the background, or while the screen is off. The app uses location fixes on your device to decide which grid cells to reveal; it does not retain the raw fixes or send them to the developer. You can pause tracking in Overworld or change location access in iOS Settings at any time.</p>
 
     <h2>Map data</h2>
-    <p>The app displays Apple Maps through Apple's native MapKit framework. Apple's handling of requests made by its operating-system services is governed by Apple's policies. Overworld does not operate a map server.</p>
+    <p>The app displays Apple Maps through Apple's MapKit framework. Apple services may process requests needed to provide maps and device location services under Apple's policies. Overworld does not operate its own map server.</p>
 
     <h2>Backups and exports</h2>
-    <p>You may export a standard or password-protected <code>.overworld</code> backup. Exports contain revealed grid cells and format metadata, not raw location history. You choose where to save or share exported files. Password-protected exports use authenticated encryption, and Overworld cannot recover forgotten passwords.</p>
+    <p>You may export a standard or password-protected <code>.overworld</code> backup. Current exports can contain revealed grid cells, optional first-reveal times, and format metadata. They do not contain raw GPS fixes, routes, or speeds. You choose where to save or share exported files, which may include a cloud or third-party storage provider configured on your device.</p>
+
+    <p>Standard backups are readable files. Password-protected backups use authenticated encryption, but Overworld cannot recover a forgotten password.</p>
 
     <p>The live app database may be included in device backups according to your iOS and iCloud settings. Those backups are managed by Apple, not by Overworld.</p>
 
     <h2>Purchases</h2>
     <p>Overworld Pro purchases are handled by Apple through StoreKit. The developer does not receive your payment-card details. Apple provides the app with entitlement information needed to unlock purchased features.</p>
 
-    <h2>Data sharing and retention</h2>
-    <p>Because Overworld does not collect your data on a developer-operated server, the developer has no personal map data to sell, share, retain, or delete. You can erase explored areas within the app or delete the app and its local data through iOS.</p>
+    <h2>Support communications</h2>
+    <p>If you contact support, the developer receives the information you choose to include, such as your email address, message, and attachments. That information is used to respond to your request. Do not send an exported map unless support asks for it.</p>
 
-    <h2>Children</h2>
-    <p>Overworld does not knowingly collect personal information from children or anyone else.</p>
+    <h2>Sharing, retention, and deletion</h2>
+    <p>Overworld does not automatically upload the live exploration database to the developer, and the developer does not sell map data. Apple handles map and purchase services, and any provider you choose handles files saved through the export sheet under its own terms.</p>
+
+    <p>You can erase explored areas within the app or delete the app and its local data through iOS. Exported files and device backups must be deleted separately from the locations where you chose to store them. Information voluntarily sent to support may remain in support email records as needed to handle the request.</p>
 
     <h2>Changes</h2>
-    <p>If Overworld's data practices change, this policy and the App Store privacy disclosure will be updated before the change is released.</p>
+    <p>This policy may be revised when Overworld's features or data practices change. The date above shows when it was last updated.</p>
 
     <h2>Contact</h2>
     <p>Privacy questions can be sent to <a href="mailto:overworldsupport@icloud.com?subject=Overworld%20Privacy">overworldsupport@icloud.com</a>.</p>
 
     <p><a href="index.html">Return to Overworld Support</a></p>
+    <footer>&copy; 2026 David Haggerty. All rights reserved.</footer>
   </main>
 </body>
 </html>
