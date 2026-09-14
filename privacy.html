@@ -22,44 +22,71 @@
   <main>
     <div class="eyebrow">Overworld</div>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated July 18, 2026</p>
+    <p class="updated">Last updated September 13, 2026</p>
+
+    <p>This policy explains what information Overworld uses, what it stores, and when information can leave the app.</p>
+
+    <h2>The short version</h2>
 
     <p>Overworld stores its live exploration database on your device. The app does not require an account or include advertising or analytics SDKs. Optional exports and device backups can create copies outside the app, as described below.</p>
 
-    <h2>Information Overworld stores</h2>
-    <p>Overworld stores revealed map cells as integer grid coordinates and, when available, the time each cell was first revealed. These records support the explored map and map-history playback. The app also stores your settings.</p>
+    <h2>What Overworld does</h2>
 
-    <p>Overworld does not retain raw GPS fixes, routes, speeds, or a continuous movement log. Cells created by older versions may not have a first-reveal time.</p>
+    <p>Overworld turns the map around you into a fog-of-war minimap. As you move, it reveals the area nearby and remembers which parts of the map you&#x27;ve explored.</p>
+
+    <p>To do this, it uses your device&#x27;s location — including in the background, so your map can keep filling in while you aren&#x27;t actively looking at the app.</p>
 
     <h2>Location</h2>
-    <p>Overworld requests Always location access so it can reveal nearby map cells while the app is open, in the background, or while the screen is off. The app uses location fixes on your device to decide which grid cells to reveal; it does not retain the raw fixes or send them to the developer. You can pause tracking in Overworld or change location access in iOS Settings at any time.</p>
 
-    <h2>Map data</h2>
-    <p>The app displays Apple Maps through Apple's MapKit framework. Apple services may process requests needed to provide maps and device location services under Apple's policies. Overworld does not operate its own map server.</p>
+    <ul>
+      <li>Overworld requests <strong>&quot;Always&quot; location permission</strong> so it can reveal nearby map cells even when the app is in the background or your screen is off.</li>
+      <li>Location determines which map cells to reveal and positions your map marker and follow camera. Course and heading orient directional avatars and camera views. These updates are processed on-device.</li>
+      <li><strong>Overworld does not retain raw GPS fixes, routes, or speeds.</strong> It stores each small map-grid cell you reveal as integer coordinates and, for discoveries made since playback was introduced, the time that cell was first revealed. Those first-reveal times power the optional map-playback feature and can show the general areas and times at which the map filled in. Tiles created by older versions have no timestamp and appear as playback&#x27;s starting map.</li>
+      <li><strong>Overworld processes location fixes on-device.</strong> It does not retain the raw fixes or send them to the developer.</li>
+    </ul>
 
-    <h2>Backups and exports</h2>
-    <p>You may export a standard or password-protected <code>.overworld</code> backup. Current exports can contain revealed grid cells, optional first-reveal times, and format metadata. They do not contain raw GPS fixes, routes, or speeds. You choose where to save or share exported files, which may include a cloud or third-party storage provider configured on your device.</p>
+    <p>You can pause tracking at any time from the app&#x27;s settings, or revoke location permission in iOS Settings, and Overworld will stop immediately.</p>
 
-    <p>Standard backups are readable files. Password-protected backups use authenticated encryption, but Overworld cannot recover a forgotten password.</p>
+    <h2>What Overworld stores</h2>
 
-    <p>The live app database may be included in device backups according to your iOS and iCloud settings. Those backups are managed by Apple, not by Overworld.</p>
+    <ul>
+      <li><strong>Explored map cells and first-reveal times</strong>, as integer grid coordinates with optional timestamps, in a local, on-device database protected by iOS data protection. First-reveal times are stored for all users so playback is complete if Overworld Pro is purchased later.</li>
+      <li><strong>Your preferences</strong> (such as reveal width, fog density, and tracking mode) in the standard iOS system preferences on your device.</li>
+    </ul>
 
-    <h2>Purchases</h2>
-    <p>Overworld Pro purchases are handled by Apple through StoreKit. The developer does not receive your payment-card details. Apple provides the app with entitlement information needed to unlock purchased features.</p>
+    <p>Overworld does not automatically upload the live exploration database to the developer.</p>
+
+    <h2>Exports and device backups</h2>
+
+    <p>The optional Home Screen widget reads a rendered map thumbnail and its capture time from a container shared with the app on your device; it does not read the exploration database or request location. You can also share a map image or, with Pro, a replay video. These are rendered on-device and leave the app only through the sharing destination you choose. They can show places you explored.</p>
+
+    <p>Map export is user-directed. A current <code>.overworld</code> file contains format metadata, revealed grid-cell coordinates, and any first-reveal times used for playback — no raw GPS fixes, routes, or speeds. Older coordinate-only backups remain importable. You choose the export destination using the iOS save or share sheet, which may include iCloud Drive or another service you have configured.</p>
+
+    <p>Before exporting, you can choose a standard readable backup or a password-protected backup. Protected backups encrypt the grid-cell payload with AES-256-GCM using a key derived from your password with PBKDF2-HMAC-SHA256, a fresh random salt, and a fresh nonce. Overworld does not store or transmit the password and cannot recover it. Anyone who has both the protected file and its password can import it. Standard backups are not encrypted and can be read by anyone who receives the file.</p>
+
+    <p>The live database is stored in the app&#x27;s local container. Like other local app data, it may be included in an iPhone or iPad backup according to your device and iCloud Backup settings. Overworld does not provide its own cloud sync.</p>
+
+    <h2>Apple services and other providers</h2>
+
+    <p>Overworld displays Apple Maps through MapKit and handles purchases through StoreKit. Apple services may process requests needed to provide maps, device location services, purchases, and device backups under Apple&#x27;s policies.</p>
+
+    <p>Overworld does not operate its own map server or include advertising or analytics SDKs. A cloud or third-party storage provider you choose through the export sheet handles the files saved there under its own terms.</p>
 
     <h2>Support communications</h2>
-    <p>If you contact support, the developer receives the information you choose to include, such as your email address, message, and attachments. That information is used to respond to your request. Do not send an exported map unless support asks for it.</p>
 
-    <h2>Sharing, retention, and deletion</h2>
-    <p>Overworld does not automatically upload the live exploration database to the developer, and the developer does not sell map data. Apple handles map and purchase services, and any provider you choose handles files saved through the export sheet under its own terms.</p>
+    <p>If you contact support, the developer receives the information you choose to include, such as your email address, message, and attachments. That information is used to respond to your request. Do not send an exported map unless support asks for it. Information voluntarily sent to support may remain in support email records as needed to handle the request.</p>
 
-    <p>You can erase explored areas within the app or delete the app and its local data through iOS. Exported files and device backups must be deleted separately from the locations where you chose to store them. Information voluntarily sent to support may remain in support email records as needed to handle the request.</p>
+    <h2>Deleting your data</h2>
 
-    <h2>Changes</h2>
-    <p>This policy may be revised when Overworld's features or data practices change. The date above shows when it was last updated.</p>
+    <p>Your live Overworld map is stored in the app&#x27;s local container. Deleting the app removes that local copy. Exported files and device backups are managed separately wherever you chose to save them. You can also erase parts of your live map from within the app at any time; erasing a cell also removes its first-reveal time.</p>
+
+    <h2>Changes to this policy</h2>
+
+    <p>This policy may be revised when Overworld&#x27;s features or data practices change. The date above shows when it was last updated.</p>
 
     <h2>Contact</h2>
-    <p>Privacy questions can be sent to <a href="mailto:overworldsupport@icloud.com?subject=Overworld%20Privacy">overworldsupport@icloud.com</a>.</p>
+
+    <p>Questions about privacy? Contact: <strong><a href="mailto:overworldsupport@icloud.com">overworldsupport@icloud.com</a></strong></p>
 
     <p><a href="index.html">Return to Overworld Support</a></p>
     <footer>&copy; 2026 David Haggerty. All rights reserved.</footer>
